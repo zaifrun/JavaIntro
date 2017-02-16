@@ -1,11 +1,14 @@
 package org.webdevelopment.javaintro;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import static android.R.attr.value;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    static float PI = 3.14f;
 
     public void basicTypes()
     {
@@ -60,5 +63,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Animal fido = new Animal("Fido");
+        Animal tavi = new Dog("Tavi");
+        Animal birdie = new Bird("birdie");
+        Dog dog = new Dog("doggie");
+        List<Animal> animals = new ArrayList<>();
+        animals.add(fido);
+        animals.add(tavi);
+        animals.add(birdie);
+        animals.add(dog);
+        for (Animal animal : animals)
+        {
+            System.out.println(animal.getName()+" is of type "+ animal.getType());
+        }
     }
 }
